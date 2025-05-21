@@ -82,6 +82,7 @@ import { getOpitons } from '@/utils/options'
 import { shortId } from '@/utils/short-id'
 
 import ruConfig from '../locales/tdesign/ru-RU'
+import esConfig from '../locales/tdesign/es-ES'
 
 const { toBlob, toJpeg, toPng } = domToImage
 
@@ -417,6 +418,7 @@ const localeConfig = $ref<Record<string, GlobalConfigProvider>>({
   'zh-CN': cnConfig as unknown as GlobalConfigProvider,
   'en-US': enConfig as unknown as GlobalConfigProvider,
   'ru-RU': ruConfig as unknown as GlobalConfigProvider,
+  'es-ES': esConfig as unknown as GlobalConfigProvider,
 })
 
 // Options Setup
@@ -708,8 +710,8 @@ const getContent = (format = 'html') => {
 
 // Locale Methods
 const setLocale = (params: SupportedLocale) => {
-  if (!['zh-CN', 'en-US', 'ru-RU'].includes(params)) {
-    throw new Error('"params" must be one of "zh-CN", "en-US" or "ru-RU".')
+  if (!['zh-CN', 'en-US', 'ru-RU', 'es-ES'].includes(params)) {
+    throw new Error('"params" must be one of "zh-CN", "en-US" or "ru-RU" or "es-ES".')
   }
   if (locale.value === params) {
     return

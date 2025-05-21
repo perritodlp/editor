@@ -80,6 +80,7 @@ const defaultOptions: UmoEditorOptions = {
       en_US: 'Please enter the document content...',
       zh_CN: '请输入文档内容...',
       ru_RU: 'Пожалуйста, введите содержимое документа...',
+      es_ES: 'Por favor, ingrese el contenido del documento...',
     },
     enableSpellcheck: true,
     enableMarkdown: true,
@@ -166,7 +167,7 @@ const isLocale = (value: unknown) => {
   }
   if (isRecord(value)) {
     for (const key of Object.keys(value)) {
-      if (!['en_US', 'zh_CN', 'ru_RU'].includes(key)) {
+      if (!['en_US', 'zh_CN', 'ru_RU', 'es_ES'].includes(key)) {
         return false
       }
     }
@@ -184,9 +185,9 @@ const ojbectSchema = new ObjectSchema({
   locale: {
     merge: 'replace',
     validate(value) {
-      if (value && !['en-US', 'zh-CN', 'ru-RU'].includes(value)) {
+      if (value && !['en-US', 'zh-CN', 'ru-RU', 'es-ES'].includes(value)) {
         throw new Error(
-          'Key "locale": must be one of "en-US", "zh-CN" or "ru-RU".',
+          'Key "locale": must be one of "en-US", "zh-CN" or "ru-RU" or "es-ES".',
         )
       }
     },

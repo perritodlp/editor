@@ -136,6 +136,7 @@ const defaultOptions: UmoEditorOptions = {
     en_US: {},
     zh_CN: {},
     ru_RU: {},
+    es_ES: {},
   },
   async onSave() {
     return await new Promise((_, reject) => {
